@@ -56,10 +56,17 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Ouroboros\Stylized Textures - Mini Set\Demo\Sources\Rotator.cs" />
+    <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\HitInformer.cs" />
     <Compile Include="Assets\Scripts\DestroyOutOfBounds.cs" />
     <Compile Include="Assets\Scripts\OnCollision.cs" />
+    <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Clown.cs" />
+    <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Shatterable.cs" />
     <Compile Include="Assets\Scripts\MoveForward.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
+    <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Piece.cs" />
+    <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Spawner.cs" />
+    <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\IHittable.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\RepeatBackground.cs" />
   </ItemGroup>
