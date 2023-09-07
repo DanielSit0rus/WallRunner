@@ -26,6 +26,7 @@ public class OnCollision : MonoBehaviour
         {
             Debug.Log("Player collided with LethalBox. Player dies!");
             Destroy(other.gameObject); // Destroy the player
+            player.gameOver = true;
         }
         if (gameObject.CompareTag("Box")) // regular box
         {
@@ -37,6 +38,7 @@ public class OnCollision : MonoBehaviour
             else
             {
                 Destroy(other.gameObject); // if not, the player will die
+                player.gameOver = true;
             }
         }
     }

@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private bool canmove = true;
     private bool isMoving = false;
     public bool dashActive = false;
+    public bool gameOver;
+
     private float targetX = 0;
     public float speed;
     public int dashDuration = 3;
@@ -24,7 +26,10 @@ public class PlayerController : MonoBehaviour
     {
         movePlayer();
         checkInputs();
+
+        
     }
+
 
     void movePlayer()
     {

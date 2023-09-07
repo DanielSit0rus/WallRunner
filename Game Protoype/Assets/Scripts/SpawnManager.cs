@@ -7,17 +7,20 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject[] obstaclePrefabs; // array to store the obstacles
     public GameObject powerupPrefab;
+    private PlayerController player;
     float spawnRangeX = 10;
+
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnRandomObstacles", 2, 1.5f); // repeats every 2 seconds
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpawnPowerup();
+        
     }
     Vector3 GenerateSpawnPosition ()
     {
@@ -29,12 +32,17 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnRandomObstacles()
     {
-        float[] xPositions = new float[2] { -spawnRangeX, spawnRangeX }; // possible x positions for the objects
-        int obstacleIndex = Random.Range(0, obstaclePrefabs.Length); 
-        int positionIndex = Random.Range(0, xPositions.Length);
-        Vector3 spawnPos = new Vector3(xPositions[positionIndex], 6, 0); // initial spawn position
+        if(player.gameOver == false) // only calls if the game is not over
+        {
+            float[] xPositions = new float[2] { -spawnRangeX, spawnRangeX }; // possible x positions for the objects
+            int obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
+            int positionIndex = Random.Range(0, xPositions.Length);
+            Vector3 spawnPos = new Vector3(xPositions[positionIndex], 6, 0); // initial spawn position
 
-        Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation); // spawning the obstacles
+            Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation); // spawning the obstacles
+            SpawnPowerup();
+        }
+        
     }
 
     void SpawnPowerup()
