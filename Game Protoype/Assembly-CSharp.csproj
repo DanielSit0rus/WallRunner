@@ -63,13 +63,13 @@
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Clown.cs" />
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Shatterable.cs" />
     <Compile Include="Assets\Scripts\MoveForward.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Piece.cs" />
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Spawner.cs" />
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\IHittable.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\RepeatBackground.cs" />
-    <Compile Include="Assets\Scripts\ScoreManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
