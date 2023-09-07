@@ -9,7 +9,7 @@ public class MoveForward : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 3.0f; // set the initial speed to 3
+        speed = 6.0f; // set the initial speed to 3
         player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 

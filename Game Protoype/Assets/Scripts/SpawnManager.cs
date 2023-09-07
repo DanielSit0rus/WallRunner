@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomObstacles", 2, 1.5f); // repeats every 2 seconds
+        InvokeRepeating("SpawnRandomObstacles", 2, 1f); // repeats every 2 seconds
         player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 

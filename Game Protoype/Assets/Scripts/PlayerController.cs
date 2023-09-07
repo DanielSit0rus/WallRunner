@@ -17,10 +17,15 @@ public class PlayerController : MonoBehaviour
     public int dashDuration = 3;
     private new Renderer renderer;
 
+    public AudioClip jumpSound;
+    public AudioClip dashSound;
+    private AudioSource playerAudio;
+
     void Start()
     {
         speed = 30.0f; //speedfor the player object to move
         renderer = GetComponent<Renderer>(); // get the renderer component of player
+        playerAudio = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -65,23 +70,31 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow) && canmove) // left arrow will make target position to be x= - 10
             {
+                playerAudio.PlayOneShot(jumpSound, 1.0f);
                 targetX = -10f;
                 canmove = false; // to ensure the player can't change direction mid transitioning to target position
                 isMoving = true;
+                
+                
             }
             if (Input.GetKeyDown(KeyCode.RightArrow) && canmove) // left arrow will make target position to be x= 10
             {
+                playerAudio.PlayOneShot(jumpSound, 1.0f); // plays the jump sound effect
                 targetX = 10f;
                 canmove = false;
                 isMoving = true;
+                
             }
             if (Input.GetKeyUp(KeyCode.UpArrow))
             {
+                playerAudio.PlayOneShot(dashSound, 1.0f); // plays the dash sound effect
                 dashActive = true;
                 Debug.Log("dash active!");
                 renderer.material.color = Color.blue; // make player blue to indicate they are currently dashing
                 StartCoroutine(DashCooldown()); // start the dashing count down for 3 seconds
+
                 
+
 
             }
         }
@@ -89,6 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.UpArrow)) // will make the player stop moving and allows movement again. This will act as the mid-air dash
             {
+                playerAudio.PlayOneShot(dashSound, 1.0f);
                 canmove = true;
                 isMoving = false;
                 Debug.Log("Up pressed");

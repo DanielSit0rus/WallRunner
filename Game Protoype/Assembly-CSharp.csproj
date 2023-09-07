@@ -67,9 +67,9 @@
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Piece.cs" />
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Spawner.cs" />
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\IHittable.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\RepeatBackground.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
