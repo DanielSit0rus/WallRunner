@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         speed = 30.0f; //speedfor the player object to move
-        renderer = GetComponent<Renderer>(); // get the renderer component of player
+        renderer = GetComponent<Renderer>(); //get the renderer component of player
         playerAudio = GetComponent<AudioSource>();
         rigidb = gameObject.GetComponent<Rigidbody2D>();
 
