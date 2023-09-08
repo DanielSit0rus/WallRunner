@@ -27,28 +27,20 @@ public class OnCollision : MonoBehaviour
     {
         if (gameObject.CompareTag("Lethal")) // lethal box
         {
-           
-
             Debug.Log("Player collided with LethalBox. Player dies!");
-            Destroy(other.gameObject); // Destroy the player
             player.gameOver = true;
-            playerAudio.PlayOneShot(deathSound, 1.0f);
+            PlaySoundAndDestroy(other.gameObject, deathSound);
         }
         if (gameObject.CompareTag("Box")) // regular box
         {
-            
-
             bool isDashActive = player.dashActive; 
             if (isDashActive)
             {
-                playerAudio.PlayOneShot(hitSound, 1.0f);
-                Destroy(gameObject); // if player is dashing, the box will get destroyed
+                PlaySoundAndDestroy(gameObject, hitSound); // if player is dashing, the box will get destroyed
             }
             else
             {
-               
-                playerAudio.PlayOneShot(deathSound, 1.0f);
-                Destroy(other.gameObject); // if not, the player will die
+                PlaySoundAndDestroy(other.gameObject, deathSound);
                 player.gameOver = true;
             }
             
@@ -57,9 +49,22 @@ public class OnCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        playerAudio.PlayOneShot(hitSound, 1.0f);
-        Destroy(gameObject); // destroy the powerup
+        PlaySoundAndDestroy(gameObject, hitSound);
+    }
+
+    private void PlaySoundAndDestroy(GameObject obj, AudioClip sound)
+    {
+        // Instantiate a new GameObject for playing the sound
+        GameObject audioGameObject = new GameObject("AudioPlayer");
+
+        // Add the AudioPlayer script to the new GameObject
+        AudioPlayer audioPlayer = audioGameObject.AddComponent<AudioPlayer>();
+
+        // Use the AudioPlayer script to play the sound
+        audioPlayer.PlaySound(sound, 1.0f);
+
+        // Destroy the original object (e.g., the player or obstacle)
+        Destroy(obj);
     }
 
 }
