@@ -9,6 +9,8 @@ TagManager:
   - Box
   - Hittable
   - Wall
+  - Projectile
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Obstacle
+  - Projectile
   - 
   - 
   - 

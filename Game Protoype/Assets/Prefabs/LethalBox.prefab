@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 642153422}
   - component: {fileID: 642153423}
   - component: {fileID: 2952361337398022486}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LethalBox
   m_TagString: Lethal
   m_Icon: {fileID: 0}
@@ -280,13 +280,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6638648108865096549}
     m_Modifications:
+    - target: {fileID: 1023483755041206, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1340090058498080, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 1340090058498080, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340090058498080, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
       propertyPath: m_TagString
       value: Lethal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468192649633924, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491225042580260, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602537836391822, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632724077459218, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731866198907160, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840264909486628, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4089852009388372, guid: b9f61412fbd551745bf2ced48e859fed, type: 3}
       propertyPath: m_RootOrder

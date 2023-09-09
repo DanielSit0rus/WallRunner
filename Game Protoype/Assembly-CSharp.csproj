@@ -59,6 +59,7 @@
     <Compile Include="Assets\Ouroboros\Stylized Textures - Mini Set\Demo\Sources\Rotator.cs" />
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\HitInformer.cs" />
     <Compile Include="Assets\Scripts\DestroyOutOfBounds.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\OnCollision.cs" />
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Clown.cs" />
     <Compile Include="Assets\2D Destructible Objects\Assets\C#Scripts\Shatterable.cs" />

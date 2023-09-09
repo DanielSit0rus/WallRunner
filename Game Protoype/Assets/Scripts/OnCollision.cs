@@ -25,15 +25,15 @@ public class OnCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject.CompareTag("Lethal")) // lethal box
+        if (gameObject.CompareTag("Lethal") && other.gameObject.CompareTag("Player")) // lethal box
         {
             Debug.Log("Player collided with LethalBox. Player dies!");
             player.gameOver = true;
             PlaySoundAndDestroy(other.gameObject, deathSound);
         }
-        if (gameObject.CompareTag("Box")) // regular box
+        if (gameObject.CompareTag("Box") && other.gameObject.CompareTag("Player")) // regular box
         {
-            bool isDashActive = player.dashActive; 
+            bool isDashActive = player.dashActive;
             if (isDashActive)
             {
                 PlaySoundAndDestroy(gameObject, hitSound); // if player is dashing, the box will get destroyed
@@ -43,8 +43,15 @@ public class OnCollision : MonoBehaviour
                 PlaySoundAndDestroy(other.gameObject, deathSound);
                 player.gameOver = true;
             }
-            
+
         }
+        if (gameObject.CompareTag("Projectile") && other.gameObject.CompareTag("Player")) // when fireball hits player
+        {
+            Debug.Log("Projecile collisioned");
+            PlaySoundAndDestroy(other.gameObject, deathSound);
+            player.gameOver = true;
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

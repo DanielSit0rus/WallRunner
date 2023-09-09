@@ -19,7 +19,7 @@ public class DestroyOutOfBounds : MonoBehaviour
     {
         if (gameObject.CompareTag("Player"))
         {
-            if (transform.position.y < yBound)
+            if (transform.position.y < yBound) // destroy player when it falls down the map
             {
                 player.gameOver = true;
                 Destroy(gameObject);

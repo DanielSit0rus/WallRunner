@@ -18,8 +18,17 @@ public class MoveForward : MonoBehaviour
     {
         if (player.gameOver == false) //only calls if the game is not over
         {
-            transform.Translate(Vector3.down * speed * Time.deltaTime); // make the background to scroll down
+            if (gameObject.CompareTag("Projectile"))
+            {
+                transform.Translate(Vector3.down * 12f * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(Vector3.down * speed * Time.deltaTime); // make the background to scroll down
+            }
+            
         }
+
             
     }
 }
