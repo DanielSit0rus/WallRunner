@@ -47,9 +47,18 @@ public class OnCollision : MonoBehaviour
         }
         if (gameObject.CompareTag("Projectile") && other.gameObject.CompareTag("Player")) // when fireball hits player
         {
-            Debug.Log("Projecile collisioned");
-            PlaySoundAndDestroy(other.gameObject, deathSound);
-            player.gameOver = true;
+            if (player.slideActive)
+            {
+                // doesnt die if player is sliding
+            }
+            else
+            {
+                Debug.Log("Projecile collisioned");
+                PlaySoundAndDestroy(other.gameObject, deathSound);
+                player.gameOver = true;
+            }
+
+            
         }
         
     }

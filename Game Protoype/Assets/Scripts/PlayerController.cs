@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private bool canmove = true;
     private bool isMoving = false;
     public bool dashActive = false;
+    public bool slideActive = false;
     private bool resetGravity = true;
     public bool gameOver;
 
@@ -116,6 +117,16 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("dash active!");
                 renderer.material.color = Color.blue; // make player blue to indicate they are currently dashing
                 StartCoroutine(DashCooldown()); // start the dashing count down for 3 seconds
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) && !slideActive) // sliding when down arrow pressed
+            {
+                slideActive = true;
+                renderer.material.color = Color.green;
+            }
+            if (Input.GetKeyUp(KeyCode.DownArrow) && slideActive) // no longer sliding when down arrow is no longer pressed
+            {
+                slideActive = false;
+                renderer.material.color = Color.white;  
             }
         }
         else
